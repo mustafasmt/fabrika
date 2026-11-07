@@ -1,0 +1,909 @@
+[
+ {
+  "id": "py01",
+  "lang": "python",
+  "title": [
+   "Python",
+   "yuvarlamayı bilmiyor? 🤨"
+  ],
+  "code": "print(round(2.5))",
+  "options": [
+   "3",
+   "2",
+   "2.5"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → 2",
+   "# round(3.5) → 4  (çifte yuvarlar)"
+  ],
+  "explain": "Python tam ortadaki sayıyı <b>çift</b> olana yuvarlar.<br><span class=\"hl\">2.5 → 2</span> ama <span class=\"hl\">3.5 → 4</span> 🤯",
+  "check": {
+   "stdout": "2"
+  }
+ },
+ {
+  "id": "py02",
+  "lang": "python",
+  "title": [
+   "Sadece b'yi",
+   "değiştirdim ama… 😳"
+  ],
+  "code": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",
+  "options": [
+   "[1, 2, 3]",
+   "[1, 2, 3, 4]",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → [1, 2, 3, 4]"
+  ],
+  "explain": "<span class=\"hl\">b = a</span> kopya oluşturmaz, aynı listeye<br>ikinci bir isim verir. b değişince <b>a da değişir</b>.",
+  "check": {
+   "stdout": "[1, 2, 3, 4]"
+  }
+ },
+ {
+  "id": "py03",
+  "lang": "python",
+  "title": [
+   "Bilgisayar",
+   "hesap bilmiyor 🤯"
+  ],
+  "code": "print(0.1 + 0.2 == 0.3)",
+  "options": [
+   "True",
+   "False",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → False",
+   "# 0.1 + 0.2 = 0.30000000000000004"
+  ],
+  "explain": "Bilgisayar 0.1'i tam olarak saklayamaz,<br>küçük bir pay kalır → <b>False</b> 😅",
+  "check": {
+   "stdout": "False"
+  }
+ },
+ {
+  "id": "py04",
+  "lang": "python",
+  "title": [
+   "Çarpma mı,",
+   "kopyalama mı? 🤔"
+  ],
+  "code": "print(\"3\" * 3)",
+  "options": [
+   "9",
+   "333",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → 333"
+  ],
+  "explain": "Metin × sayı = metni o kadar <b>tekrar et</b>.<br><span class=\"hl\">\"3\"</span> bir sayı değil, bir metin!",
+  "check": {
+   "stdout": "333"
+  }
+ },
+ {
+  "id": "py05",
+  "lang": "python",
+  "title": [
+   "\"False\" yazıyor",
+   "ama… 😵"
+  ],
+  "code": "print(bool(\"False\"))",
+  "options": [
+   "True",
+   "False",
+   "Hata verir"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "# → True"
+  ],
+  "explain": "Boş olmayan <b>her metin</b> True sayılır.<br>İçinde ne yazdığının önemi yok 🙃",
+  "check": {
+   "stdout": "True"
+  }
+ },
+ {
+  "id": "py06",
+  "lang": "python",
+  "title": [
+   "Varsayılan liste",
+   "tuzağı 🪤"
+  ],
+  "code": "def ekle(x=[]):\n    x.append(1)\n    return x\n\nekle()\nprint(ekle())",
+  "options": [
+   "[1]",
+   "[1, 1]",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → [1, 1]"
+  ],
+  "explain": "Varsayılan liste <b>bir kere</b> oluşturulur<br>ve her çağrıda <span class=\"hl\">aynı liste</span> kullanılır.",
+  "check": {
+   "stdout": "[1, 1]"
+  }
+ },
+ {
+  "id": "py07",
+  "lang": "python",
+  "title": [
+   "Bölme",
+   "ikiye ayrıldı ➗"
+  ],
+  "code": "print(10 // 3, 10 % 3)",
+  "options": [
+   "3.33 1",
+   "3 1",
+   "3 0"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → 3 1"
+  ],
+  "explain": "<span class=\"hl\">//</span> tam bölme (3), <span class=\"hl\">%</span> kalan (1).<br>İkisi birlikte <b>10 = 3×3 + 1</b>",
+  "check": {
+   "stdout": "3 1"
+  }
+ },
+ {
+  "id": "py08",
+  "lang": "python",
+  "title": [
+   "True + True",
+   "= ? 🤨"
+  ],
+  "code": "print(True + True)",
+  "options": [
+   "2",
+   "True",
+   "Hata verir"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "# → 2"
+  ],
+  "explain": "Python'da True aslında <b>1</b>, False <b>0</b>.<br>Yani 1 + 1 = <span class=\"hl\">2</span> 😄",
+  "check": {
+   "stdout": "2"
+  }
+ },
+ {
+  "id": "py09",
+  "lang": "python",
+  "title": [
+   "Eksi indeks",
+   "var mı ki? 🤔"
+  ],
+  "code": "x = [10, 20, 30]\nprint(x[-1])",
+  "options": [
+   "Hata verir",
+   "30",
+   "10"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "# → 30"
+  ],
+  "explain": "Eksi indeks <b>sondan</b> sayar.<br><span class=\"hl\">x[-1]</span> = son eleman",
+  "check": {
+   "stdout": "30"
+  }
+ },
+ {
+  "id": "py10",
+  "lang": "python",
+  "title": [
+   "Zincirleme",
+   "karşılaştırma ⛓️"
+  ],
+  "code": "print(1 < 2 < 3)",
+  "options": [
+   "True",
+   "False",
+   "Hata verir"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "# → True",
+   "# 1 < 2 and 2 < 3 demek"
+  ],
+  "explain": "Python <span class=\"hl\">1 &lt; 2 &lt; 3</span> ifadesini<br><b>1 &lt; 2 and 2 &lt; 3</b> diye okur ✅",
+  "check": {
+   "stdout": "True"
+  }
+ },
+ {
+  "id": "web01",
+  "lang": "web",
+  "title": [
+   "JavaScript",
+   "toplama bilmiyor? 🤯"
+  ],
+  "code": "console.log(0.1 + 0.2)",
+  "options": [
+   "0.3",
+   "0.30000000000000004",
+   "NaN"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 0.30000000000000004"
+  ],
+  "explain": "Sayılar ikilik sistemde saklanır,<br>0.1 tam yazılamaz → <b>küçük bir pay</b> kalır.",
+  "check": {
+   "stdout": "0.30000000000000004"
+  }
+ },
+ {
+  "id": "web02",
+  "lang": "web",
+  "title": [
+   "Metin + sayı",
+   "= ? 🤔"
+  ],
+  "code": "console.log(\"5\" + 3)",
+  "options": [
+   "8",
+   "53",
+   "NaN"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → \"53\""
+  ],
+  "explain": "Bir taraf metinse <span class=\"hl\">+</span> <b>birleştirir</b>.<br>\"5\" + 3 = \"53\"",
+  "check": {
+   "stdout": "53"
+  }
+ },
+ {
+  "id": "web03",
+  "lang": "web",
+  "title": [
+   "Artı başka,",
+   "eksi başka 😵"
+  ],
+  "code": "console.log(\"5\" - 3)",
+  "options": [
+   "2",
+   "53",
+   "NaN"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "// → 2"
+  ],
+  "explain": "<span class=\"hl\">-</span> metni birleştiremez,<br>\"5\"i <b>sayıya çevirir</b> → 5 - 3 = 2",
+  "check": {
+   "stdout": "2"
+  }
+ },
+ {
+  "id": "web04",
+  "lang": "web",
+  "title": [
+   "JavaScript'in",
+   "en eski hatası 🐛"
+  ],
+  "code": "console.log(typeof null)",
+  "options": [
+   "null",
+   "object",
+   "undefined"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → \"object\""
+  ],
+  "explain": "1995'ten kalma bir hata! Düzeltilemedi çünkü<br><b>internetin yarısı</b> bozulurdu 😅",
+  "check": {
+   "stdout": "object"
+  }
+ },
+ {
+  "id": "web05",
+  "lang": "web",
+  "title": [
+   "Dizi + dizi",
+   "= ? 🤨"
+  ],
+  "code": "console.log([1, 2, 3] + [4])",
+  "options": [
+   "[1,2,3,4]",
+   "1,2,34",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → \"1,2,34\""
+  ],
+  "explain": "<span class=\"hl\">+</span> dizileri metne çevirir:<br>\"1,2,3\" + \"4\" = <b>\"1,2,34\"</b>",
+  "check": {
+   "stdout": "1,2,34"
+  }
+ },
+ {
+  "id": "web06",
+  "lang": "web",
+  "title": [
+   "sort()",
+   "sayı bilmiyor 😳"
+  ],
+  "code": "console.log([10, 1, 2].sort())",
+  "options": [
+   "[1, 2, 10]",
+   "[1, 10, 2]",
+   "[10, 2, 1]"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → [1, 10, 2]"
+  ],
+  "explain": "sort() varsayılan olarak <b>metin gibi</b> sıralar.<br>\"10\", \"2\"den önce gelir! Sayı için <span class=\"hl\">sort((a,b)=&gt;a-b)</span>",
+  "check": {
+   "stdout": "[1, 10, 2]",
+   "normalizeSpaces": true
+  }
+ },
+ {
+  "id": "web07",
+  "lang": "web",
+  "title": [
+   "Kendine bile",
+   "eşit değil 🤯"
+  ],
+  "code": "console.log(NaN === NaN)",
+  "options": [
+   "true",
+   "false",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → false"
+  ],
+  "explain": "NaN <b>hiçbir şeye</b> eşit değildir, kendine bile.<br>Kontrol için <span class=\"hl\">Number.isNaN()</span>",
+  "check": {
+   "stdout": "false"
+  }
+ },
+ {
+  "id": "web08",
+  "lang": "web",
+  "title": [
+   "Hangi kural",
+   "kazanır? 🎨"
+  ],
+  "code": "<p id=\"yazi\" class=\"yesil\">Selam</p>\n<style>\n  .yesil { color: green; }\n  #yazi  { color: blue; }\n  p      { color: red; }\n</style>",
+  "options": [
+   "Kırmızı",
+   "Mavi",
+   "Yeşil"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "/* → mavi (#yazi kazandı) */"
+  ],
+  "explain": "<span class=\"hl\">#id</span> seçicisi, <span class=\"hl\">.class</span> ve etiketten <b>güçlüdür</b>.<br>Sıranın önemi yok!",
+  "question": "Yazı hangi renkte görünür?",
+  "check": {
+   "css": {
+    "selector": "#yazi",
+    "prop": "color",
+    "expect": "rgb(0, 0, 255)"
+   }
+  },
+  "file": "index.html"
+ },
+ {
+  "id": "web09",
+  "lang": "web",
+  "title": [
+   "!important mı,",
+   "#id mi? 🥊"
+  ],
+  "code": "<p id=\"b\" class=\"a\">Selam</p>\n<style>\n  #b { color: blue; }\n  .a { color: red !important; }\n</style>",
+  "options": [
+   "Kırmızı",
+   "Mavi",
+   "Siyah"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "/* → kırmızı (!important) */"
+  ],
+  "explain": "<span class=\"hl\">!important</span> normal kuralları ezer,<br>#id bile kazanamaz. Az kullan 😅",
+  "question": "Yazı hangi renkte görünür?",
+  "check": {
+   "css": {
+    "selector": "#b",
+    "prop": "color",
+    "expect": "rgb(255, 0, 0)"
+   }
+  },
+  "file": "index.html"
+ },
+ {
+  "id": "web10",
+  "lang": "web",
+  "title": [
+   "Matematikte doğru,",
+   "JS'te yanlış 😵"
+  ],
+  "code": "console.log(1 < 2 < 3, 3 > 2 > 1)",
+  "options": [
+   "true true",
+   "true false",
+   "false false"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → true false"
+  ],
+  "explain": "<span class=\"hl\">3 &gt; 2</span> → true → <b>1</b> olur.<br>Sonra <span class=\"hl\">1 &gt; 1</span> → false 🤯",
+  "check": {
+   "stdout": "true false"
+  }
+ },
+ {
+  "id": "rs01",
+  "lang": "rust",
+  "title": [
+   "Aynı isimle",
+   "iki değişken? 🤔"
+  ],
+  "code": "let x = 5;\nlet x = x * 2;\nprintln!(\"{}\", x);",
+  "options": [
+   "Derlenmez",
+   "10",
+   "5"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 10"
+  ],
+  "explain": "Buna <b>shadowing</b> denir: yeni <span class=\"hl\">let</span><br>eski x'in üstüne yeni bir x açar.",
+  "check": {
+   "stdout": "10"
+  }
+ },
+ {
+  "id": "rs02",
+  "lang": "rust",
+  "title": [
+   "Rust'ta",
+   "sahiplik kavgası ⚔️"
+  ],
+  "code": "let s = String::from(\"hi\");\nlet t = s;\nprintln!(\"{}\", s);",
+  "options": [
+   "hi",
+   "boş yazar",
+   "Derlenmez"
+  ],
+  "answer": 2,
+  "outputLines": [
+   "// ✗ error: borrow of moved value: `s`"
+  ],
+  "explain": "<span class=\"hl\">let t = s</span> sahipliği t'ye <b>taşır</b>.<br>s artık kullanılamaz 🚫",
+  "check": {
+   "compileError": true
+  }
+ },
+ {
+  "id": "rs03",
+  "lang": "rust",
+  "title": [
+   "255 + 1",
+   "= ? 🤯"
+  ],
+  "code": "let x: u8 = 255;\nprintln!(\"{}\", x.wrapping_add(1));",
+  "options": [
+   "256",
+   "0",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 0"
+  ],
+  "explain": "u8 en fazla <b>255</b> tutar.<br><span class=\"hl\">wrapping_add</span> taşınca başa sarar → 0 🔁",
+  "check": {
+   "stdout": "0"
+  }
+ },
+ {
+  "id": "rs04",
+  "lang": "rust",
+  "title": [
+   "Rust'ta",
+   "bölme 🧮"
+  ],
+  "code": "println!(\"{}\", 7 / 2);",
+  "options": [
+   "3.5",
+   "3",
+   "4"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 3"
+  ],
+  "explain": "İki tam sayı bölünürse sonuç da <b>tam sayı</b>.<br>Ondalık için <span class=\"hl\">7.0 / 2.0</span>",
+  "check": {
+   "stdout": "3"
+  }
+ },
+ {
+  "id": "rs05",
+  "lang": "rust",
+  "title": [
+   "Eksi sayıda",
+   "mod alınca 😵"
+  ],
+  "code": "println!(\"{}\", -7 % 3);",
+  "options": [
+   "2",
+   "-1",
+   "1"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → -1  (Python'da 2!)"
+  ],
+  "explain": "Rust'ta <span class=\"hl\">%</span> sonucu <b>bölünenin işaretini</b> alır.<br>Python'da aynı işlem 2 verir 🤯",
+  "check": {
+   "stdout": "-1"
+  }
+ },
+ {
+  "id": "rs06",
+  "lang": "rust",
+  "title": [
+   "Noktalı virgül",
+   "her şeyi değiştirir 😳"
+  ],
+  "code": "let x = { 3; };\nprintln!(\"{:?}\", x);",
+  "options": [
+   "3",
+   "()",
+   "Derlenmez"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → ()"
+  ],
+  "explain": "<span class=\"hl\">3;</span> bir ifade değil, <b>komut</b> olur.<br>Blok hiçbir şey döndürmez → <b>()</b>",
+  "check": {
+   "stdout": "()"
+  }
+ },
+ {
+  "id": "rs07",
+  "lang": "rust",
+  "title": [
+   "\"héllo\"",
+   "ne kadar uzun? 📏"
+  ],
+  "code": "println!(\"{}\", \"héllo\".len());",
+  "options": [
+   "5",
+   "6",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 6"
+  ],
+  "explain": "<span class=\"hl\">len()</span> harfi değil <b>baytı</b> sayar.<br>\"é\" UTF-8'de 2 bayt 📦",
+  "check": {
+   "stdout": "6"
+  }
+ },
+ {
+  "id": "rs08",
+  "lang": "rust",
+  "title": [
+   "x'i 6 yaptım,",
+   "ne yazar? 🤔"
+  ],
+  "code": "let x = 5;\nx = 6;\nprintln!(\"{}\", x);",
+  "options": [
+   "6",
+   "5",
+   "Derlenmez"
+  ],
+  "answer": 2,
+  "outputLines": [
+   "// ✗ error: cannot assign twice to immutable variable"
+  ],
+  "explain": "Rust'ta değişkenler varsayılan olarak <b>değişmez</b>.<br>Çözüm: <span class=\"hl\">let mut x = 5;</span>",
+  "check": {
+   "compileError": true
+  }
+ },
+ {
+  "id": "rs09",
+  "lang": "rust",
+  "title": [
+   "match",
+   "ne seçer? 🎯"
+  ],
+  "code": "let n = 3;\nlet s = match n {\n    1 => \"bir\",\n    2 | 3 => \"iki-üç\",\n    _ => \"çok\",\n};\nprintln!(\"{}\", s);",
+  "options": [
+   "bir",
+   "iki-üç",
+   "çok"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → iki-üç"
+  ],
+  "explain": "<span class=\"hl\">2 | 3</span> \"2 veya 3\" demek.<br><b>_</b> ise geri kalan her şey 🎯",
+  "check": {
+   "stdout": "iki-üç"
+  }
+ },
+ {
+  "id": "rs10",
+  "lang": "rust",
+  "title": [
+   "Taşma",
+   "yakalandı mı? 🪤"
+  ],
+  "code": "let x = i32::MAX.checked_add(1);\nprintln!(\"{}\", x.is_none());",
+  "options": [
+   "true",
+   "false",
+   "Derlenmez"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "// → true"
+  ],
+  "explain": "<span class=\"hl\">checked_add</span> taşarsa <b>None</b> döner,<br>program çökmez ✅",
+  "check": {
+   "stdout": "true"
+  }
+ },
+ {
+  "id": "ar01",
+  "lang": "arduino",
+  "title": [
+   "Arduino",
+   "saymayı unuttu 🤯"
+  ],
+  "code": "int x = 32767;\nx = x + 1;\nSerial.println(x);",
+  "options": [
+   "32768",
+   "-32768",
+   "0"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → -32768"
+  ],
+  "explain": "Uno'da <span class=\"hl\">int</span> 16 bittir, en fazla <b>32767</b>.<br>Taşınca eksi tarafa sarar 🔁",
+  "question": "Arduino Uno'da seri monitörde ne görünür?",
+  "check": {
+   "stdout": "-32768"
+  }
+ },
+ {
+  "id": "ar02",
+  "lang": "arduino",
+  "title": [
+   "5 bölü 2",
+   "kaç eder? 🤔"
+  ],
+  "code": "Serial.println(5 / 2);",
+  "options": [
+   "2.5",
+   "2",
+   "3"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 2"
+  ],
+  "explain": "İki tam sayı bölünürse küsurat <b>atılır</b>.<br>Ondalık için <span class=\"hl\">5.0 / 2</span>",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "2"
+  }
+ },
+ {
+  "id": "ar03",
+  "lang": "arduino",
+  "title": [
+   "Pi'nin",
+   "yarısı nereye? 🥧"
+  ],
+  "code": "Serial.println(3.14159);",
+  "options": [
+   "3.14159",
+   "3.14",
+   "3"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 3.14"
+  ],
+  "explain": "println ondalıklı sayılarda varsayılan <b>2 basamak</b> yazar.<br>Hepsi için <span class=\"hl\">Serial.println(x, 5)</span>",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "3.14"
+  }
+ },
+ {
+  "id": "ar04",
+  "lang": "arduino",
+  "title": [
+   "255'ten",
+   "sonra ne gelir? 🔁"
+  ],
+  "code": "byte b = 255;\nb++;\nSerial.println(b);",
+  "options": [
+   "256",
+   "0",
+   "-1"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 0"
+  ],
+  "explain": "<span class=\"hl\">byte</span> 0–255 arası tutar.<br>255'ten sonra <b>başa sarar</b> → 0",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "0"
+  }
+ },
+ {
+  "id": "ar05",
+  "lang": "arduino",
+  "title": [
+   "Döngü",
+   "kaç kere döner? 🔄"
+  ],
+  "code": "for (int i = 0; i < 3; i++) {\n  Serial.print(i);\n}",
+  "options": [
+   "123",
+   "012",
+   "0123"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 012"
+  ],
+  "explain": "Sayaç <b>0'dan</b> başlar, 3 olunca durur.<br>Yani 0, 1, 2 → <span class=\"hl\">012</span>",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "012"
+  }
+ },
+ {
+  "id": "ar06",
+  "lang": "arduino",
+  "title": [
+   "Harfe",
+   "1 ekledim 🔤"
+  ],
+  "code": "Serial.println('A' + 1);",
+  "options": [
+   "B",
+   "66",
+   "A1"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 66"
+  ],
+  "explain": "Harfler aslında <b>sayıdır</b>: 'A' = 65.<br>Toplama sonucu int olur → <span class=\"hl\">66</span>",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "66"
+  }
+ },
+ {
+  "id": "ar07",
+  "lang": "arduino",
+  "title": [
+   "Metne",
+   "sayı ekledim ➕"
+  ],
+  "code": "String s = \"LED\";\ns += 13;\nSerial.println(s);",
+  "options": [
+   "LED13",
+   "LED",
+   "Hata verir"
+  ],
+  "answer": 0,
+  "outputLines": [
+   "// → LED13"
+  ],
+  "explain": "<span class=\"hl\">String</span> nesnesine sayı eklenince<br>sayı <b>metne çevrilip</b> sona yapışır.",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "LED13"
+  }
+ },
+ {
+  "id": "ar08",
+  "lang": "arduino",
+  "title": [
+   "Tek eşittir",
+   "büyük hata 🪤"
+  ],
+  "code": "int x = 10;\nif (x = 5) {\n  Serial.println(\"evet\");\n} else {\n  Serial.println(\"hayır\");\n}",
+  "options": [
+   "hayır",
+   "evet",
+   "Hata verir"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → evet"
+  ],
+  "explain": "<span class=\"hl\">=</span> karşılaştırmaz, <b>atama</b> yapar!<br>x = 5 olur, 5 de doğru sayılır. Doğrusu: <span class=\"hl\">==</span>",
+  "question": "Seri monitörde ne görünür?",
+  "check": {
+   "stdout": "evet"
+  }
+ },
+ {
+  "id": "ar09",
+  "lang": "arduino",
+  "title": [
+   "1 dakika",
+   "kaç milisaniye? ⏱️"
+  ],
+  "code": "Serial.println(1000 * 60);",
+  "options": [
+   "60000",
+   "-5536",
+   "0"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → -5536"
+  ],
+  "explain": "Uno'da sayılar 16 bit <b>int</b>: 60000 sığmaz, taşar.<br>Çözüm: <span class=\"hl\">1000UL * 60</span>",
+  "question": "Arduino Uno'da seri monitörde ne görünür?",
+  "check": {
+   "int16": "1000 * 60",
+   "stdout": "-5536"
+  }
+ },
+ {
+  "id": "ar10",
+  "lang": "arduino",
+  "title": [
+   "int",
+   "kaç bayt? 📦"
+  ],
+  "code": "Serial.println(sizeof(int));",
+  "options": [
+   "4",
+   "2",
+   "8"
+  ],
+  "answer": 1,
+  "outputLines": [
+   "// → 2"
+  ],
+  "explain": "Bilgisayarda int 4 bayt ama <b>Uno'da 2 bayt</b>.<br>Bu yüzden en fazla 32767 tutar.",
+  "question": "Arduino Uno'da seri monitörde ne görünür?",
+  "check": {
+   "stdout": "2"
+  }
+ }
+]

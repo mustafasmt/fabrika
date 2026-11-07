@@ -1,0 +1,21 @@
+{
+  "name": "kod-quiz-fabrikasi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kod Quiz videolar\u0131n\u0131 \u00fcretip Instagram'a planl\u0131 payla\u015fan sistem",
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "render": "node engine/render.mjs",
+    "worker": "node scripts/worker.mjs",
+    "build:panel": "node scripts/build-panel.mjs"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/poppins": "5.3.0",
+    "@twemoji/svg": "15.0.0",
+    "playwright": "1.63.0",
+    "@supabase/supabase-js": "2.119.0",
+    "@fontsource/inter": "5.3.0"
+  }
+}

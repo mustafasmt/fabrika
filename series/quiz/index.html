@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../node_modules/@fontsource/poppins/600.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/poppins/700.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/poppins/800.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/poppins/900.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/jetbrains-mono/400.css">
+<link rel="stylesheet" href="../../node_modules/@fontsource/jetbrains-mono/700.css">
+<style>
+  :root { --acc: #a78bfa; --acc2: #7c3aed; --acc3: #c4b5fd; --ok: #34d399; --bad: #f87171; --bgc: #0b0714; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bgc); }
+  body { font-family: 'Poppins', sans-serif; color: #fff; }
+  #bg { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  #stage { position: absolute; inset: 0; transform-origin: 540px 900px; }
+  .abs { position: absolute; left: 0; right: 0; }
+  .badge { top: 210px; margin: 0 auto; width: max-content; padding: 12px 30px; border-radius: 40px;
+    background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.13); font-weight: 700; font-size: 26px; letter-spacing: 2px; color: rgba(255,255,255,.85); }
+  .badge b { color: var(--acc3); }
+  .title { top: 290px; text-align: center; font-weight: 800; font-size: 92px; line-height: 1.06; letter-spacing: -1px; }
+  .title .l2 .w { background: linear-gradient(90deg, var(--acc3), var(--acc)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .title .l2 .w.emo { background: none; color: #fff; }
+  .title .w { display: inline-block; }
+  .title .w + .w { margin-left: .26em; }
+  .title .l1, .title .l2 { display: table; margin: 0 auto; white-space: nowrap; }
+  .sub { top: 510px; text-align: center; font-weight: 600; font-size: 42px; color: rgba(255,255,255,.82); }
+  .code { left: 70px; right: 70px; top: 600px; border-radius: 30px; background: rgba(14,10,28,.86);
+    border: 2px solid rgba(255,255,255,.12); box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(167,139,250,.08) inset; overflow: hidden; }
+  .code .bar { height: 64px; display: flex; align-items: center; gap: 14px; padding: 0 28px; border-bottom: 2px solid rgba(255,255,255,.07); }
+  .code .dot { width: 18px; height: 18px; border-radius: 50%; }
+  .code .fn { margin-left: 12px; font: 400 24px 'JetBrains Mono'; color: rgba(255,255,255,.45); }
+  .code pre { padding: 30px 36px 34px; font: 400 38px/1.55 'JetBrains Mono', monospace; white-space: pre; color: #e9e6f5; }
+  .code .ln { display: block; min-height: 1.55em; }
+  .tk-tag { color: #f472b6; } .tk-at { color: #fbbf24; } .tk-mac { color: #60a5fa; } .tk-kw { color: #f472b6; } .tk-fn { color: #60a5fa; } .tk-str { color: #fbbf24; } .tk-num { color: #fb923c; } .tk-cm { color: #6b7280; } .tk-op { color: #c4b5fd; }
+  .out { color: var(--ok); font-weight: 700; }
+  .caret { display: inline-block; width: 4px; height: 1.1em; background: var(--acc); vertical-align: -0.15em; margin-left: 2px; }
+  .opts { left: 70px; right: 70px; display: flex; flex-direction: column; gap: 24px; }
+  .opt { position: relative; height: 112px; border-radius: 26px; display: flex; align-items: center; padding: 0 34px; gap: 28px;
+    background: linear-gradient(90deg, rgba(124,58,237,.42), rgba(124,58,237,.12)); border: 2px solid rgba(255,255,255,.1);
+    font: 700 44px 'JetBrains Mono', monospace; overflow: hidden; }
+  .opt .k { width: 62px; height: 62px; border-radius: 16px; display: grid; place-items: center; background: rgba(255,255,255,.12); font: 800 32px Poppins; }
+  .opt .mark { position: absolute; right: 34px; font: 800 48px Poppins; opacity: 0; }
+  .opt .sweep { position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); opacity: 0; }
+  .opt.ok { background: linear-gradient(90deg, rgba(16,185,129,.55), rgba(16,185,129,.18)); border-color: var(--ok); box-shadow: 0 0 60px rgba(52,211,153,.35); }
+  .opt.ok .k { background: var(--ok); color: #052e1f; }
+  .stamp { position: absolute; font: 900 74px Poppins; color: var(--ok); border: 8px solid var(--ok); border-radius: 18px; padding: 0 26px; letter-spacing: 4px; opacity: 0; transform-origin: center; }
+  .explain { text-align: center; padding: 0 90px; font-weight: 600; font-size: 38px; line-height: 1.4; color: rgba(255,255,255,.9); }
+  .explain b { color: var(--ok); }
+  .explain .hl { color: var(--acc3); font-weight: 800; }
+  .cta { display: flex; justify-content: center; gap: 18px; }
+  .chip { padding: 16px 28px; border-radius: 22px; background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.14); font-weight: 700; font-size: 34px; }
+  .chip.main { background: var(--acc2); border-color: var(--acc); }
+  .timer { position: absolute; }
+  .ring { width: 150px; height: 150px; }
+  .ring svg { position: absolute; inset: 0; }
+  .ring .num { position: absolute; inset: 0; display: grid; place-items: center; font: 800 70px Poppins; }
+  .tbar { left: 70px; right: 70px; height: 22px; border-radius: 12px; background: rgba(255,255,255,.1); overflow: hidden; }
+  .tbar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 12px; background: linear-gradient(90deg, var(--acc2), var(--acc3)); }
+  .tbar-num { font: 800 54px Poppins; text-align: center; }
+  .big { left: 0; right: 0; text-align: center; font: 900 240px/1 Poppins; color: rgba(255,255,255,.95); text-shadow: 0 0 80px var(--acc); }
+  .dots { left: 0; right: 0; display: flex; justify-content: center; gap: 30px; }
+  .dots i { width: 46px; height: 46px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 30px var(--acc); }
+  .prog { left: 70px; right: 70px; top: 1680px; height: 8px; border-radius: 6px; background: rgba(255,255,255,.08); }
+  .prog i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px; background: var(--acc); }
+  .emj { height: 1em; width: 1em; vertical-align: -0.13em; display: inline-block; }
+  .flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<canvas id="bg" width="1080" height="1920"></canvas>
+<div id="stage"></div>
+<div class="flash" id="flash"></div>
+<script src="../../engine/common.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
