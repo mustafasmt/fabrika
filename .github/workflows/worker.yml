@@ -1,0 +1,51 @@
+name: İşçi (render + Instagram)
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: worker
+  cancel-in-progress: false
+
+jobs:
+  calis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      DRY_RUN: ${{ vars.DRY_RUN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Zamanlayıcıyı canlı tut (GitHub 60 gün sonra kapatmasın)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT repos/${{ github.repository }}/actions/workflows/worker.yml/enable
+
+      - name: Planla + paylaş (hafif)
+        id: hafif
+        run: node scripts/worker.mjs --light
+
+      - name: Bağımlılıkları kur
+        if: steps.hafif.outputs.render == 'true'
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          pip install --quiet numpy scipy
+
+      - name: Video üret + paylaş
+        if: steps.hafif.outputs.render == 'true'
+        run: node scripts/worker.mjs --render
