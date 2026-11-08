@@ -42,6 +42,7 @@ jobs:
       - name: Bağımlılıkları kur
         if: steps.hafif.outputs.render == 'true'
         run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           npm ci
           npx playwright install --with-deps chromium
           pip install --quiet numpy scipy
